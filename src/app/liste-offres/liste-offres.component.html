@@ -1,0 +1,63 @@
+<app-bandeau-contrat
+  [contractName]=contrat.name
+  libelleAction='List of remits'
+> 
+</app-bandeau-contrat>
+&nbsp;&nbsp;&nbsp;
+
+<!--
+<H3>All remits</H3>
+-->
+
+<div class="table-users">
+   <div class="header">Net remits</div>
+   <table cellspacing="0">
+  <TR *ngFor="let offre of listeClauses">
+    <TD>{{ offre.ori }}</TD>
+    <TD>{{ offre.des }}</TD>
+    <TD>{{ offre.cie }}</TD>
+    <TD>{{ offre.cdr }}</TD>
+    <TD>{{ offre.farebasis }}</TD>
+    <TD>{{ offre.remise }} %</TD>
+    <TD>
+      <button *ngIf="offre.upgradable"
+        title="Sky is not a limit!"
+        [routerLink]="['/upgrade']"
+      >
+        Upgrade O&amp;D
+      </button>
+    </TD>
+  </TR>
+  <TR *ngIf="listeClauses.length==0">
+    &nbsp;
+    <BR>
+    &nbsp; no offer
+    <BR>
+    &nbsp;
+  </TR>
+  </table>
+</div>
+
+
+<!-- Boutons -->
+<table class="table-vide">
+  <TR>
+    <TD>
+<button
+  [routerLink]="['/details']"
+>
+  Back to contract
+  &nbsp;
+  <mon-icone-sq nom="contrat" height=30></mon-icone-sq>
+</button>
+    </TD>
+    <TD>
+&nbsp;
+<button
+  [routerLink]="['/contracts']"
+>
+  Back to contract list
+</button>
+    </TD>
+  </TR>
+</table>

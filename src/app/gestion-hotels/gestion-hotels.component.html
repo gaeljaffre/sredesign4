@@ -1,0 +1,59 @@
+<table align=center width="600px">
+	<TR text-align=left>
+		<TD>
+			<H2>
+				Please find here the partner hotels:
+			</H2>
+		</TD>
+		<TD width=200px>
+		</TD>
+	</TR>
+</table>
+
+<!--
+<table align=center class="hotel-item" *ngFor="let hotel of hotels">
+  <TR>
+    <TD>
+	    <B>
+        {{ hotel.name }}
+      </B>
+    </TD>
+      {{ hotel.description }}
+    <TD>
+    </TD>
+    <TD> 
+	    {{ hotel.ddv }} - {{ hotel.dfv }}
+    </TD>
+  </TR>
+</table>
+-->
+
+<table align=center class="hotel-item" *ngFor="let hotel of hotels">
+  <TR>
+    <B>
+      {{ hotel.name }}
+    </B>
+  </TR>
+  <TR>
+    <TD>
+      <table>
+        <TR>
+          {{ hotel.description }}
+        </TR>
+        <TR>
+          Partnership from {{ hotel.ddv }} to {{ hotel.dfv }}
+        </TR>
+        <TR>
+	        Average price: {{ hotel.prixMoyen }} €
+          / Average discount: {{ hotel.remise }} %
+        </TR>
+      </table>
+    </TD>
+    <TD>
+      <button (click)="gestionHotels()">
+        Manage offers
+        &nbsp;
+        <mat-icon class="white-icon"    mat-list-icon>local_hotel</mat-icon>
+      </button>
+    </TD>
+</table>

@@ -1,0 +1,54 @@
+<div>
+<H1>Admin parameters</H1>
+
+<table>
+  <TR>
+      <TD width="20px">
+      </TD>
+      <TD>
+         Restart application
+      </TD>
+      <TD>
+        <a (click)="pasImplemente()">
+          <mat-icon mat-list-icon>loop</mat-icon>
+        </a>
+      </TD>
+  </TR>
+  <TR>
+      <TD>
+      </TD>
+      <TD>
+         Shutdown application
+      </TD>
+      <TD>
+        <a (click)="pasImplemente()">
+          <mat-icon mat-list-icon>toggle_off</mat-icon>
+        </a>
+      </TD>
+  </TR>
+  <TR>
+    &nbsp;
+  </TR>
+  <TR>
+      <TD>
+      </TD>
+      <TD>
+         Database URL:
+      </TD>
+      <TD>
+        {{ url }}
+      </TD>
+  </TR>
+  <TR>
+      <TD>
+      </TD>
+      <TD>
+         Production mode:
+      </TD>
+      <TD>
+        {{ prodMode }}
+      </TD>
+  </TR>
+</table>
+
+</div>

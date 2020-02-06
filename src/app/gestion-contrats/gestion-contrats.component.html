@@ -1,0 +1,37 @@
+<table align=center width="500px">
+  <TR text-align=left>
+    <TD>
+      <H2>
+        Please find here your portfolio:
+      </H2>
+    </TD>
+    <TD width=200px>
+    </TD>
+  </TR>
+</table>
+ 
+<table align=center class="contract-item" *ngFor="let contrat of contractsList">
+  <B>
+  {{ contrat.country }} &nbsp;&nbsp;
+  </B>
+
+  <!-- Description en info-bulle -->
+  <b *ngIf="contrat.description" [title]="contrat.description">
+  {{ contrat.name }}
+  </b>
+  <font *ngIf="!contrat.description">
+  {{ contrat.name }}
+  </font>
+
+  {{ contrat.ddv }} - {{ contrat.dfv }}
+
+  &nbsp;
+  <button
+    (click)="sauverContratCourant(contrat)"
+    [routerLink]="['/details']"
+  >
+    <mon-icone-sq nom="plane" height="32"></mon-icone-sq>
+    &nbsp;
+    Manage
+  </button>
+</table>

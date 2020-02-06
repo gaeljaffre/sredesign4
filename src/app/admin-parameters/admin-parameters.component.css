@@ -1,0 +1,10 @@
+div {
+  margin: 20px;
+  min-height: 400px;
+  max-width: 600px;
+}
+
+tr {
+  margin: 50px;
+  height: 60px;
+}

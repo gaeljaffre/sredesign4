@@ -1,0 +1,9 @@
+div {
+  margin: 20px;
+  min-height: 400px;
+  max-width: 600px;
+}
+
+td {
+  min-width: 100px;
+}

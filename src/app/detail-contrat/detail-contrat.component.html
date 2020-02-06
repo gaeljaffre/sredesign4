@@ -1,0 +1,62 @@
+<app-bandeau-contrat
+  [contractName]=contrat.name
+> 
+</app-bandeau-contrat>
+&nbsp;&nbsp;&nbsp;
+
+
+<div align=center class="table-users">
+   <div class="header">{{ contrat.name }}</div>
+   
+   <table cellspacing="0">
+  <TR>
+    <TD>Country</TD>
+    <TD>{{ contrat.country }}</TD>
+  </TR>
+  <TR>
+    <TD>Type</TD>
+    <TD>{{ contrat.type }}</TD>
+  </TR>
+  <TR>
+    <TD>Validity</TD>
+    <TD>{{ contrat.ddv }} - {{ contrat.dfv }}</TD>
+  </TR>
+  <TR>
+    <TD>GIN</TD>
+    <TD>{{ contrat.gin }}</TD>
+  </TR>
+  <TR>
+    <TD>Comment</TD>
+    <TD>{{ contrat.description }}</TD>
+  </TR>
+   </table>
+</div>
+
+<div>
+&nbsp;
+</div>
+
+<!-- Boutons -->
+<table class="table-vide">
+  <TR>
+    <TD>
+<button
+  [routerLink]="['/offres']"
+>
+  Manage offers
+  &nbsp;
+   <mon-icone-sq nom="plane" height="32"></mon-icone-sq>
+</button>
+
+</TD>
+<TD>
+
+<button
+  [routerLink]="['/contracts']"
+>
+  Back to contract list
+</button>
+
+</TD>
+  </TR>
+</table>

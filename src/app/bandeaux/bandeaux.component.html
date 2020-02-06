@@ -1,0 +1,77 @@
+<mat-sidenav-container class="example-container">
+
+ <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true" (mouseenter)="increase()"
+    (mouseleave)="decrease()">
+    
+    <div class="partielogo">
+        <table>&nbsp;</table>
+      &nbsp;
+      <a routerLink="/">
+       <mon-icone-sq nom="bateau2"></mon-icone-sq>
+      </a>
+    </div>
+    <mat-nav-list>
+
+      <mat-list-item routerLink="/" routerLinkActive="active">
+        <mat-icon mat-list-icon>menu</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 7" class="sidenav-item">
+          <h5 class="lead">Home</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/contracts" routerLinkActive="active">
+        <mat-icon mat-list-icon>airline_seat_recline_extra</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 7" class="sidenav-item">
+          <h5 class="lead">Contract management</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/hotels" routerLinkActive="active">
+        <mat-icon mat-list-icon>apartment</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 7" class="sidenav-item">
+          <h5 class="lead">Hotel management</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/shuttles" routerLinkActive="active">
+        <mat-icon mat-list-icon>airport_shuttle</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 7" class="sidenav-item">
+          <h5 class="lead">Shuttle management</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/admin" >
+        <mat-icon mat-list-icon>settings</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 7" class="sidenav-item">
+          <h5 class="lead">Admin parameters</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item (click)="afficherAide()">
+        <mat-icon mat-list-icon>local_phone</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 7" class="sidenav-item">
+          <h5 class="lead">Help me</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/about" routerLinkActive="active" >
+        <mat-icon mat-list-icon>person</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 7" class="sidenav-item">
+          <h5 class="lead">About Corsair Redesign</h5>
+        </div>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
