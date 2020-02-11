@@ -64,3 +64,41 @@
       </button>
     </TD>
 </table>
+
+<BR>
+<h2>
+  Add new partner
+</h2>
+<form [formGroup]="formulaireSaisie" (ngSubmit)="onSubmit(formulaireSaisie.value)">
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="description">
+      Description
+    </label>
+    <input id="description" type="text" formControlName="description">
+  </div>
+
+  <div>
+    <label for="prixMoyen">
+      Average price
+    </label>
+    <input id="prixMoyen" type="number" formControlName="prixMoyen">
+  </div>
+
+  <div>
+    <label for="remiseMoyenne">
+      Average discount %
+    </label>
+    <input id="remiseMoyenne" type="number" formControlName="remiseMoyenne">
+  </div>
+
+  <button class="button" type="submit">Add new partner</button>
+
+</form>
