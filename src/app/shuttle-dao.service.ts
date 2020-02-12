@@ -43,10 +43,10 @@ export class ShuttleDaoService {
     return liste;
   }
 
-  enregistrerNouveauShuttle(shuttleForm) {
+  enregistrerNouveauShuttle(shuttleForm: Shuttle) {
     // appel backend
     //window.alert(shuttleForm);
-
+    console.warn('remiseMoyenne = ', shuttleForm.remise);
     // TODO Mettre dans classe Shuttle
     // TODO appel backend
   }

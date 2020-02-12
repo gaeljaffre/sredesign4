@@ -10,26 +10,6 @@
 	</TR>
 </table>
 
-<!--
-<table align=center class="shuttle-item" *ngFor="let shuttle of shuttles">
-  <TR>
-    <B>
-      {{ shuttle.name }}
-    </B>
-  </TR>
-  <TR>
-    {{ shuttle.description }}
-  </TR>
-  <TR>
-    Partership from {{ shuttle.ddv }} to {{ shuttle.dfv }}
-  </TR>
-  <TR>
-	  Average price: {{ shuttle.prixMoyen }} €
-    / Average discount: {{ shuttle.remise }} %
-  </TR>
-</table>
--->
-
 <table align=center class="shuttle-item" *ngFor="let shuttle of shuttles">
   <TR>
     <B>
@@ -66,6 +46,7 @@
 </table>
 
 <BR>
+<div name="formulaire" align=center>
 <h2>
   Add new partner
 </h2>
@@ -93,12 +74,14 @@
   </div>
 
   <div>
-    <label for="remiseMoyenne">
+    <label for="remise">
       Average discount %
     </label>
-    <input id="remiseMoyenne" type="number" formControlName="remiseMoyenne">
+    <input id="remise" type="number" formControlName="remise">
   </div>
 
   <button class="button" type="submit">Add new partner</button>
 
 </form>
+
+</div>
