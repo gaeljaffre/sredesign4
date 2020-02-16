@@ -44,10 +44,24 @@ export class ShuttleDaoService {
     return liste;
   }
 
-  enregistrerNouveauShuttle(shuttleForm: Shuttle) {
-    console.warn('type = ', shuttleForm.type);
-    console.warn('ddv = ', shuttleForm.ddv, ', dfv = ', shuttleForm.dfv);
+  enregistrerNouveauShuttle(shuttle: Shuttle) {
+    console.warn('type = ', shuttle.type);
+    console.warn('ddv = ', shuttle.ddv, ', dfv = ', shuttle.dfv);
     // TODO appel backend
+    console.log("post");
+    console.warn("shuttle", shuttle);
+    this.http.post(url + "shuttles", shuttle).subscribe(
+      () => {
+            console.log("shuttle: " + shuttle);
+      }
+      , err => {
+                console.log("Erreur : " + err.message);
+              },
+        () => {
+          console.log('completed: ' + shuttle.name);
+        }
+      );
+    console.log('fin: ' + shuttle.name);
   }
 
 }

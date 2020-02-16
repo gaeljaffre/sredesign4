@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule,  } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormsModule,  } from '@angular/forms';
 
 import { ShuttleDaoService, Shuttle } from '../shuttle-dao.service';
 
@@ -46,5 +46,14 @@ export class GestionShuttlesComponent implements OnInit {
 
     this.shuttleDaoService.enregistrerNouveauShuttle(donnees);
   }
+
+//  name = new FormControl('', [Validators.required, Validators.email]);
+
+//  getErrorMessage() {
+//    return this.name.hasError('required') ? 'You must enter a value' :
+//        this.name.hasError('email') ? 'Not a valid email' :
+//            '';
+//  }
+
 
 }

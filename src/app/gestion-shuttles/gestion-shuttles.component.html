@@ -52,19 +52,20 @@
 </h2>
 <form [formGroup]="formulaireSaisie" (ngSubmit)="onSubmit(formulaireSaisie.value)">
 
-  <form>
+  <div>
     <!--
     <input id="name" type="text" formControlName="name">
     -->
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
-      <input matInput type="text" formControlName="name" id="name" #name
+      <input matInput type="text" id="name" formControlName="name"
       required
-      #name="ngModel"
-      ngModel
       >
     </mat-form-field>
-  </form>
+    <!--
+    <mat-error *ngIf="name.empty && !name.pristine">{{getErrorMessage()}}</mat-error>
+    -->
+  </div>
   
   <div>
     <mat-form-field appearance="legacy">
