@@ -11,6 +11,7 @@ export interface Shuttle {
   prixMoyen: number;
   remise: number;
   type: string;
+  effacable: boolean;
 }
 
 
@@ -44,10 +45,8 @@ export class ShuttleDaoService {
   }
 
   enregistrerNouveauShuttle(shuttleForm: Shuttle) {
-    // appel backend
-    //window.alert(shuttleForm);
-    console.warn('remiseMoyenne = ', shuttleForm.remise);
-    // TODO Mettre dans classe Shuttle
+    console.warn('type = ', shuttleForm.type);
+    console.warn('ddv = ', shuttleForm.ddv, ', dfv = ', shuttleForm.dfv);
     // TODO appel backend
   }
 

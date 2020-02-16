@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule,  } from '@angular/forms';
 
 import { ShuttleDaoService, Shuttle } from '../shuttle-dao.service';
 
@@ -21,7 +21,10 @@ export class GestionShuttlesComponent implements OnInit {
       name: '',
       description: '',
       prixMoyen: '',
-      remise: ''
+      remise: '',
+      ddv: '01/01/2020',
+      dfv: '31/12/2020',
+      type: 'rental'
     });
   }
 
@@ -35,11 +38,11 @@ export class GestionShuttlesComponent implements OnInit {
 
   // TODO à finir
   onSubmit(donnees: Shuttle) {
-    console.warn('Le partenariat a été ajouté', donnees);
+    console.warn('Le partenariat a été ajouté ', donnees);
 
-    // TODO Mettre dans classe Shuttle
-    // TODO cases à cocher "type"
+    // TODO contrôles de saisie
     // TODO bouton supprimer si champ effacable=true
+    // TODO calendrier pour dates
 
     this.shuttleDaoService.enregistrerNouveauShuttle(donnees);
   }
