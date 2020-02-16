@@ -40,7 +40,6 @@ export class GestionShuttlesComponent implements OnInit {
   onSubmit(donnees: Shuttle) {
     console.warn('Le partenariat a été ajouté ', donnees);
 
-    // TODO contrôles de saisie
     // TODO bouton supprimer si champ effacable=true
     // TODO calendrier pour dates
 
