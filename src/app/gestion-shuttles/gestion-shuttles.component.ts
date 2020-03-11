@@ -24,7 +24,8 @@ export class GestionShuttlesComponent implements OnInit {
       remise: '',
       ddv: '01/01/2020',
       dfv: '31/12/2020',
-      type: 'rental'
+      type: 'rental',
+      effacable: true,
     });
   }
 
@@ -38,21 +39,15 @@ export class GestionShuttlesComponent implements OnInit {
 
   // TODO à finir
   onSubmit(donnees: Shuttle) {
-    console.warn('Le partenariat a été ajouté ', donnees);
-
     // TODO bouton supprimer si champ effacable=true
     // TODO calendrier pour dates
 
-    this.shuttleDaoService.enregistrerNouveauShuttle(donnees);
+    if(this.shuttleDaoService.verifierSaisieShuttle(donnees)) {
+          this.shuttleDaoService.enregistrerNouveauShuttle(donnees);
+    } else {
+      window.alert("Please fill mandatory fields");
+    }
+
   }
-
-//  name = new FormControl('', [Validators.required, Validators.email]);
-
-//  getErrorMessage() {
-//    return this.name.hasError('required') ? 'You must enter a value' :
-//        this.name.hasError('email') ? 'Not a valid email' :
-//            '';
-//  }
-
 
 }

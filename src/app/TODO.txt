@@ -1,2 +1,4 @@
 Bandeau toujours visible (ascenseur en dessous)
 Vrai "last visited"
+
+Sauvegarde shuttle + suppression (si supprimable)

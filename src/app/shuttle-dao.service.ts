@@ -44,12 +44,16 @@ export class ShuttleDaoService {
     return liste;
   }
 
+  verifierSaisieShuttle(shuttle: Shuttle): boolean {
+
+    if(shuttle.name == null || shuttle.name == "") {
+      console.log("nom incorrect");
+      return false;
+    }
+    return true;
+  }
+
   enregistrerNouveauShuttle(shuttle: Shuttle) {
-    console.warn('type = ', shuttle.type);
-    console.warn('ddv = ', shuttle.ddv, ', dfv = ', shuttle.dfv);
-    // TODO appel backend
-    console.log("post");
-    console.warn("shuttle", shuttle);
     this.http.post(url + "shuttles", shuttle).subscribe(
       () => {
             console.log("shuttle: " + shuttle);
@@ -61,7 +65,6 @@ export class ShuttleDaoService {
           console.log('completed: ' + shuttle.name);
         }
       );
-    console.log('fin: ' + shuttle.name);
   }
 
 }
