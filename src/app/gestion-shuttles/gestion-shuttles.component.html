@@ -43,6 +43,11 @@
         <mat-icon class="white-icon" mat-list-icon>airport_shuttle</mat-icon>
       </button>
     </TD>
+    <TD>
+      <button *ngIf="shuttle.effacable==true" (click)="supprimerShuttle(shuttle)">
+        <mat-icon class="white-icon" mat-list-icon>delete_forever</mat-icon>
+      </button>
+    </TD>
 </table>
 
 <BR>

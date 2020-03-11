@@ -37,13 +37,19 @@ export class GestionShuttlesComponent implements OnInit {
     window.alert("You do not have enough privileges");
   }
 
+  supprimerShuttle(shuttle) {
+    this.shuttleDaoService.supprimerShuttle(shuttle);
+  }
+
   // TODO à finir
   onSubmit(donnees: Shuttle) {
-    // TODO bouton supprimer si champ effacable=true
+
     // TODO calendrier pour dates
 
     if(this.shuttleDaoService.verifierSaisieShuttle(donnees)) {
           this.shuttleDaoService.enregistrerNouveauShuttle(donnees);
+          this.formulaireSaisie.reset();
+          // TODO remettre "rental" coché
     } else {
       window.alert("Please fill mandatory fields");
     }

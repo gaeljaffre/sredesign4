@@ -53,6 +53,10 @@ export class ShuttleDaoService {
     return true;
   }
 
+  supprimerShuttle(shuttle) {
+    console.log("suppression de " + shuttle.name);
+  }
+
   enregistrerNouveauShuttle(shuttle: Shuttle) {
     this.http.post(url + "shuttles", shuttle).subscribe(
       () => {
