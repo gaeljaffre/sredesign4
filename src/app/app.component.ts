@@ -9,5 +9,4 @@ import { appliName } from './config-bd';
 })
 export class AppComponent  {
   appliName = appliName;
-
 }

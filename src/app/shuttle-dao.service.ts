@@ -53,8 +53,21 @@ export class ShuttleDaoService {
     return true;
   }
 
+  // XXX à tester et terminer
   supprimerShuttle(shuttle) {
     console.log("suppression de " + shuttle.name);
+
+    this.http.delete(url + "shuttles", shuttle.id).subscribe(
+      () => {
+            console.log("shuttle: " + shuttle.id);
+      }
+      , err => {
+                console.log("Erreur : " + err.message);
+              },
+        () => {
+          console.log('completed: ' + shuttle.id);
+        }
+      );
   }
 
   enregistrerNouveauShuttle(shuttle: Shuttle) {
