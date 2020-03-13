@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { url } from './contrat-dao.service';
 
 export interface Shuttle {
+  key: string;
   id: number;
   name: string;
   description: string;
