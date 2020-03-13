@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { url } from './contrat-dao.service';
 
 export interface Shuttle {
-  key: string;
+  key: string; // key in DB 
   id: number;
   name: string;
   description: string;
@@ -56,17 +56,18 @@ export class ShuttleDaoService {
 
   // XXX à tester et terminer
   supprimerShuttle(shuttle) {
-    console.log("suppression de " + shuttle.name);
+    console.log("suppression de " + shuttle.name + ", key=" + shuttle.key);
 
-    this.http.delete(url + "shuttles", shuttle.id).subscribe(
+//    this.http.delete(url + "shuttles/" + shuttle.key).subscribe(
+      this.http.delete(url + "test").subscribe(
       () => {
-            console.log("shuttle: " + shuttle.id);
+            console.log("shuttle: " + shuttle.name);
       }
       , err => {
                 console.log("Erreur : " + err.message);
               },
         () => {
-          console.log('completed: ' + shuttle.id);
+          console.log('completed: ' + shuttle.name);
         }
       );
   }
